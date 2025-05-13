@@ -1,12 +1,106 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap');
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #565454;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+#app {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Big Shoulders Inline', sans-serif;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    background-color: #f9f9f9;
+    border-radius: 15px;
+}
+
+.day-container {
+    background: #22c1c3;
+    background: linear-gradient(
+        0deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgb(253, 187, 45) 100%
+    );
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+}
+
+.day-container:hover {
+    transform: scale(0.98);
+}
+
+.day-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.582);
+}
+
+.hours-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.hour-card {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.hour-time {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.hour-temp {
+    font-size: 1.1rem;
+}
+
+.loading,
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+}
+
+.error {
+    color: #dc2626;
+}
+
+@media (min-width: 640px) {
+    .hours-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .hours-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hours-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
 }

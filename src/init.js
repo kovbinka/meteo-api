@@ -1,1 +1,3 @@
-import data from './data.js';
+import { initWeatherApp } from './listeners/appListener.js';
+
+document.addEventListener('DOMContentLoaded', initWeatherApp);
